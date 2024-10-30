@@ -48,6 +48,13 @@
         .red-theme #quiz-container {
             background-color: #ff7f7f !important;
         }
+        .blud-theme {
+            background-color: #ff000d !important;
+            color: white;
+        }
+        .blud-theme #quiz-container {
+            background-color: #ff000d !important;
+        }
     </style>
 </head>
 <body>
@@ -65,6 +72,13 @@
             if (event.key === '7') {
                 // Toggle red theme by adding/removing the 'red-theme' class
                 document.body.classList.toggle('red-theme');
+            }
+        });
+         // Listen for keydown events to change the theme when "7" is pressed
+        document.addEventListener('keydown', function(event) {
+            if (event.key === '1') {
+                // Toggle red theme by adding/removing the 'red-theme' class
+                document.body.classList.toggle('blud-theme');
             }
         });
     </script>
