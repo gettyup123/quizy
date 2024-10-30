@@ -2,16 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
+    <style>
+        /* Center the quiz content */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        #quiz-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        #question-text {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        #answer-input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        #feedback {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-    <h1>Quiz Game</h1>
     <div id="quiz-container">
+        <h1>Quiz Game</h1>
         <p id="question-text">Loading question...</p>
         <input type="text" id="answer-input" placeholder="Type your answer here" required>
-        <button onclick="submitAnswer()">Submit Answer</button>
+        <div id="feedback"></div>
     </div>
-    <div id="feedback"></div>
 
     <script src="quiz.js"></script>
 </body>
