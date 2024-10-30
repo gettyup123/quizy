@@ -62,6 +62,13 @@
         .beter-theme #quiz-container {
             background-color: #8dcefc !important;
         }
+             .mooi-theme {
+            background-color: #fod7ff !important;
+            color: white;
+        }
+        .mooi-theme #quiz-container {
+            background-color: #d583e9 !important;
+        }
     </style>
 </head>
 <body>
@@ -93,6 +100,13 @@
             if (event.key === '2') {
                 // Toggle red theme by adding/removing the 'red-theme' class
                 document.body.classList.toggle('beter-theme');
+            }
+             });
+         // Listen for keydown events to change the theme when "7" is pressed
+        document.addEventListener('keydown', function(event) {
+            if (event.key === '3') {
+                // Toggle red theme by adding/removing the 'red-theme' class
+                document.body.classList.toggle('mooi-theme');
             }
         });
     </script>
