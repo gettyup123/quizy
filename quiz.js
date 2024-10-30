@@ -3,6 +3,9 @@ let currentQuestionIndex = 0;
 let attempts = 0;
 const maxAttempts = 3;
 
+// Log a message to ensure JavaScript is loading
+console.log("JavaScript loaded successfully!");
+
 // Load questions from the text file
 fetch('questions.txt')
     .then(response => response.text())
@@ -52,10 +55,11 @@ function submitAnswer() {
     }
 }
 
-// Listen for "Enter" key press in the input field and submit answer
-document.getElementById('answer-input').addEventListener('keydown', function(event) {
+// Listen for "Enter" key press in the input field using "keyup"
+document.getElementById('answer-input').addEventListener('keyup', function(event) {
+    console.log("Key pressed:", event.key);  // Log key presses for troubleshooting
     if (event.key === 'Enter') {
-        event.preventDefault(); // Prevent form submission if inside a form
+        event.preventDefault(); // Prevent any default behavior
         submitAnswer();
     }
 });
