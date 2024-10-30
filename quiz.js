@@ -54,7 +54,7 @@ function submitAnswer() {
 
 // Listen for "Enter" key press in the input field
 document.getElementById('answer-input').addEventListener('keydown', function(event) {
-    if (event.key === 'W') {
+    if (event.key === 'enter') {
         event.preventDefault(); // Prevent form submission if inside a form
         submitAnswer();
     }
