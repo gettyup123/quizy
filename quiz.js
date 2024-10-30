@@ -52,9 +52,9 @@ function submitAnswer() {
     }
 }
 
-// Listen for "Enter" key press in the input field
+// Listen for "Enter" key press in the input field and submit answer
 document.getElementById('answer-input').addEventListener('keydown', function(event) {
-    if (event.key === 'enter') {
+    if (event.key === 'Enter') {
         event.preventDefault(); // Prevent form submission if inside a form
         submitAnswer();
     }
