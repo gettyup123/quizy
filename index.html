@@ -76,6 +76,15 @@
         .raar-theme #quiz-container {
             background-color: #00965c !important;
         }
+        
+        }
+        .ander-theme {
+            background-color: ##8A9A5B !important;
+            color: white;
+        }
+        .ander-theme #quiz-container {
+            background-color: #2a4c4c !important;
+        }
     </style>
 </head>
 <body>
@@ -121,6 +130,13 @@
             if (event.key === '4') {
                 // Toggle red theme by adding/removing the 'red-theme' class
                 document.body.classList.toggle('raar-theme');
+            }
+        });
+        // Listen for keydown events to change the theme when "7" is pressed
+        document.addEventListener('keydown', function(event) {
+            if (event.key === '5') {
+                // Toggle red theme by adding/removing the 'red-theme' class
+                document.body.classList.toggle('ander-theme');
             }
         });
     </script>
