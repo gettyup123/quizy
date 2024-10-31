@@ -99,6 +99,13 @@
         .mooier-theme #quiz-container {
             background-color: #FCF6F5FF !important;
         }
+        .groen-theme {
+            background-color: #39ff14 !important;
+            color: black;
+        }
+        .groen-theme #quiz-container {
+            background-color: #39ff14 !important;
+        }
     </style>
 </head>
 <body>
@@ -158,6 +165,13 @@
             if (event.key === '6') {
                 // Toggle red theme by adding/removing the 'red-theme' class
                 document.body.classList.toggle('mooier-theme');
+            }
+        });
+        // Listen for keydown events to change the theme when "7" is pressed
+        document.addEventListener('keydown', function(event) {
+            if (event.key === '8') {
+                // Toggle red theme by adding/removing the 'red-theme' class
+                document.body.classList.toggle('groen-theme');
             }
         });
     </script>
