@@ -92,6 +92,13 @@
         .ander-theme #quiz-container {
             background-color: #89cff0 !important;
         }
+        .mooier-theme {
+            background-color: #CBCE91FF !important;
+            color: white;
+        }
+        .mooier-theme #quiz-container {
+            background-color: #76528BFF !important;
+        }
     </style>
 </head>
 <body>
@@ -144,6 +151,13 @@
             if (event.key === '5') {
                 // Toggle red theme by adding/removing the 'red-theme' class
                 document.body.classList.toggle('ander-theme');
+            }
+        });
+        // Listen for keydown events to change the theme when "7" is pressed
+        document.addEventListener('keydown', function(event) {
+            if (event.key === '6') {
+                // Toggle red theme by adding/removing the 'red-theme' class
+                document.body.classList.toggle('mooier-theme');
             }
         });
     </script>
