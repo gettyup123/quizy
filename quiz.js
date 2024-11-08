@@ -2,6 +2,7 @@ let questions = [];
 let currentQuestionIndex = 0;
 let attempts = 0;
 const maxAttempts = 3;
+let score = 0;  // Track the correct answers
 
 // Log a message to ensure JavaScript is loading
 console.log("JavaScript loaded successfully!");
@@ -28,7 +29,7 @@ function displayQuestion() {
         document.getElementById('answer-input').value = '';
         document.getElementById('feedback').innerText = '';
     } else {
-        document.getElementById('quiz-container').innerHTML = '<p>You have completed the quiz!</p>';
+        displayFinalScore();  // Show the final score when all questions are completed
     }
 }
 
@@ -38,6 +39,7 @@ function submitAnswer() {
     const currentQuestion = questions[currentQuestionIndex];
 
     if (currentQuestion.answers.includes(userAnswer)) {
+        score++;  // Increment score for a correct answer
         document.getElementById('feedback').innerText = 'Good job! Moving to the next question.';
         currentQuestionIndex++;
         attempts = 0;
@@ -55,7 +57,12 @@ function submitAnswer() {
     }
 }
 
-// Listen for "Enter" key press in the input field using "keyup"
+// Display the final score
+function displayFinalScore() {
+    document.getElementById('quiz-container').innerHTML = `<h1>Quiz Completed!</h1><p>Your score: ${score} out of ${questions.length}</p>`;
+}
+
+// Listen for "Enter" key press in the input field
 document.getElementById('answer-input').addEventListener('keyup', function(event) {
     console.log("Key pressed:", event.key);  // Log key presses for troubleshooting
     if (event.key === 'Enter') {
