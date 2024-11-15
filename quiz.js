@@ -77,7 +77,7 @@ document.getElementById('answer-input').addEventListener('keyup', function(event
             document.getElementById('feedback').innerText = `Out of attempts! The correct answer(s) was: ${currentQuestion.answers.join(', ')}. Moving to the next question.`;
             currentQuestionIndex++;
             attempts = 0;
-            setTimeout(displayQuestion, 2000); // Allow 2 seconds to read the correct answer
+            setTimeout(displayQuestion, 5000); // Allow 5 seconds to read the correct answer
         } else {
             document.getElementById('feedback').innerText = `Incorrect. You have ${maxAttempts - attempts} attempts left.`;
         }
