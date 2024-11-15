@@ -61,4 +61,28 @@ document.getElementById('answer-input').addEventListener('keyup', function(event
         event.preventDefault();
         submitAnswer();
     }
+    function submitAnswer() {
+    const userAnswer = document.getElementById('answer-input').value.trim().toLowerCase();
+    const currentQuestion = questions[currentQuestionIndex];
+
+    if (currentQuestion.answers.includes(userAnswer)) {
+        document.getElementById('feedback').innerText = 'Good job! Moving to the next question.';
+        score++; // Increase score for a correct answer
+        currentQuestionIndex++;
+        attempts = 0;
+        setTimeout(displayQuestion, 1000);
+    } else {
+        attempts++;
+        if (attempts >= maxAttempts) {
+            document.getElementById('feedback').innerText = `Out of attempts! The correct answer(s) was: ${currentQuestion.answers.join(', ')}. Moving to the next question.`;
+            currentQuestionIndex++;
+            attempts = 0;
+            setTimeout(displayQuestion, 2000); // Allow 2 seconds to read the correct answer
+        } else {
+            document.getElementById('feedback').innerText = `Incorrect. You have ${maxAttempts - attempts} attempts left.`;
+        }
+    }
+}
+
 });
+
